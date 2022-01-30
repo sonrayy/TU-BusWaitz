@@ -36,7 +36,7 @@ function handleEvent(event) {
   if (event.type !== 'message' || event.message.type !== 'text') {
     // ignore non-text-message event
     //const echo = {type : 'text', text: event.type+" "+event.message.type};
-    if(event.message.type == 'sticker'){
+    if(event.message.type == 'sticker' || event.message.type == 'emoji'){
       echo = [{type : 'sticker', packageId : '6359', stickerId : '11069853'}, 
                     {type: 'text', text: '\t\t\tสวัสดี ขอบคุณที่ส่งข้อความหาเรา\nท่านสามาถพิมพ์สายรถที่ท่านต้องการเพื่อดูตารางเวลาเดินรถ'+big_blank
                      +'Hello! Thank you for messaging us. You can type bus line to see the schedules of that line.'}];
