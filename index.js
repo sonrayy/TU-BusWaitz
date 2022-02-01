@@ -39,7 +39,9 @@ function handleEvent(event) {
     if(event.message.type == 'sticker' || event.message.type == 'emoji'){
       echo = [{type : 'sticker', packageId : '6359', stickerId : '11069853'}, 
                     {type: 'text', text: '\t\t\tสวัสดี ขอบคุณที่ส่งข้อความหาเรา\nท่านสามาถพิมพ์สายรถที่ท่านต้องการเพื่อดูตารางเวลาเดินรถ'+big_blank
-                     +'Hello! Thank you for messaging us. You can type bus line to see the schedules of that line.'}];
+                     +'Hello! Thank you for messaging us. You can type bus line to see the schedules of that line.'},
+                    {type: 'text', text:'หากท่านต้องการทราบสายรถทั้งหมดของทางมหาวิทยาลัย ท่านสามารถพิพม์ "สายรถทั้งหมด" เพื่อดูสายรถทั้งหมดในมหาวิทยาลัยธรรมศาสตร์'+
+                    '\nIf you want all of the bus lines information, please type "All bus lines".'}];
     }
   }
   // create a echoing text message
@@ -83,6 +85,18 @@ function handleEvent(event) {
             event.message.text == 'สาย5' ||
             event.message.text == '5'){
       echo = [{type: 'text', text: 'ตารางเวลาการเดินรถสาย 5'+big_blank+time}, {type : 'text', text : 'สถานี EV (ศูนย์ประชุม) — โรงอาหาร SC — '
+      +'คณะสายศึกษาศาสตร์ — คณะสายวิทยาศาสตร์ — คณะสายสุขศาสตร์ — โรงพยาบาลธรรมศาสตร์เฉลิมพระเกียรติ (กลับเส้นทางเดิม)'}];
+      // use reply API
+    }
+    else if(event.message.text == 'สายรถทั้งหมด' ||
+            event.message.text == 'สายรถ' ||
+            event.message.text == 'All bus lines' ||
+            event.message.text == 'All lines'){
+      echo = [{type:'text', text:'เสน้ทางการเดินรถทั้งหมด\n\n'},{type: 'text', text: 'สาย 1A'+big_blank+time}, {type : 'text', text : 'สถานี EV (ศูนย์ประชุม) — '
+      +'โรงอาหาร SC — โรงอาหาร Green — หอพักโซน A-B-C — อาคารสังคมศาสตร์/ศูนย์กีฬา — สถานี EV (เดินรถทางเดียว)'}, {type: 'text', text: 'สาย 1B'+big_blank+time}, {type : 'text', text : 'สถานี EV (ศูนย์ประชุม) — '
+      +'อาคารสังคมศาสตร์/ศูนย์กีฬา — หอพักโซน C-B-A — โรงอาหาร Green — โรงอาหาร SC — สถานี EV (เดินรถทางเดียว)'}, {type: 'text', text: 'สาย 2'+big_blank+time}, {type : 'text', text : 'สถานี EV (ศูนย์ประชุม) — '
+      +'โรงพยาบาลธรรมศาสตร์เฉลิมพระเกียรติ — คณะสายสุขศาสตร์ — คณะสายวิทยาศาสตร์ — โรงอาหาร Green — หอพักโซน A-B (กลับเส้นทางเดิม)'}, {type: 'text', text: 'สาย 3'+big_blank+time}, {type : 'text', text : 'สถานี TU Dome — ประตูเชียงราก 1 '
+      +'— ศูนย์กีฬา/อาคารสังคมศาสตร์ — โรงอาหาร Green — หอพักโซน A-B (กลับเส้นทางเดิม)'}, {type: 'text', text: 'สาย 5'+big_blank+time}, {type : 'text', text : 'สถานี EV (ศูนย์ประชุม) — โรงอาหาร SC — '
       +'คณะสายศึกษาศาสตร์ — คณะสายวิทยาศาสตร์ — คณะสายสุขศาสตร์ — โรงพยาบาลธรรมศาสตร์เฉลิมพระเกียรติ (กลับเส้นทางเดิม)'}];
       // use reply API
     }
