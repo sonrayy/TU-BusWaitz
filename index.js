@@ -86,18 +86,6 @@ function handleEvent(event) {
       +'คณะสายศึกษาศาสตร์ — คณะสายวิทยาศาสตร์ — คณะสายสุขศาสตร์ — โรงพยาบาลธรรมศาสตร์เฉลิมพระเกียรติ (กลับเส้นทางเดิม)'}];
       // use reply API
     }
-    else if(event.message.text == 'สายรถทั้งหมด' ||
-    event.message.text == 'สายรถ' ||
-    event.message.text == 'All bus lines' ||
-    event.message.text == 'All lines'){
-      echo = [{type:'text', text:'เสน้ทางการเดินรถทั้งหมด\n\n'},{type: 'text', text: 'สาย 1A'+big_blank+time}, {type : 'text', text : 'สถานี EV (ศูนย์ประชุม) — '
-      +'โรงอาหาร SC — โรงอาหาร Green — หอพักโซน A-B-C — อาคารสังคมศาสตร์/ศูนย์กีฬา — สถานี EV (เดินรถทางเดียว)'}, {type: 'text', text: 'สาย 1B'+big_blank+time}, {type : 'text', text : 'สถานี EV (ศูนย์ประชุม) — '
-      +'อาคารสังคมศาสตร์/ศูนย์กีฬา — หอพักโซน C-B-A — โรงอาหาร Green — โรงอาหาร SC — สถานี EV (เดินรถทางเดียว)'}, {type: 'text', text: 'สาย 2'+big_blank+time}, {type : 'text', text : 'สถานี EV (ศูนย์ประชุม) — '
-      +'โรงพยาบาลธรรมศาสตร์เฉลิมพระเกียรติ — คณะสายสุขศาสตร์ — คณะสายวิทยาศาสตร์ — โรงอาหาร Green — หอพักโซน A-B (กลับเส้นทางเดิม)'}, {type: 'text', text: 'สาย 3'+big_blank+time}, {type : 'text', text : 'สถานี TU Dome — ประตูเชียงราก 1 '
-      +'— ศูนย์กีฬา/อาคารสังคมศาสตร์ — โรงอาหาร Green — หอพักโซน A-B (กลับเส้นทางเดิม)'}, {type: 'text', text: 'สาย 5'+big_blank+time}, {type : 'text', text : 'สถานี EV (ศูนย์ประชุม) — โรงอาหาร SC — '
-      +'คณะสายศึกษาศาสตร์ — คณะสายวิทยาศาสตร์ — คณะสายสุขศาสตร์ — โรงพยาบาลธรรมศาสตร์เฉลิมพระเกียรติ (กลับเส้นทางเดิม)'}];
-      // use reply API
-    }
     else {
       echo = {type:'text', text:'ทางเราไม่สามารถตอบคำถามที่ท่านพิมพ์มาได้ ขออภัยในความไม่สะดวก\n\nSorry, we cannot response the message you sent.'}
     }
