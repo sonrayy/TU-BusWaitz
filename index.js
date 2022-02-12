@@ -39,9 +39,7 @@ function handleEvent(event) {
     if(event.message.type == 'sticker' || event.message.type == 'emoji'){
       echo = [{type : 'sticker', packageId : '6359', stickerId : '11069853'}, 
                     {type: 'text', text: '\t\t\tสวัสดี ขอบคุณที่ส่งข้อความหาเรา\nท่านสามาถพิมพ์สายรถที่ท่านต้องการเพื่อดูตารางเวลาเดินรถ'+big_blank
-                     +'Hello! Thank you for messaging us. You can type bus line to see the schedules of that line.'},
-                    {type: 'text', text:'หากท่านต้องการทราบสายรถทั้งหมดของทางมหาวิทยาลัย ท่านสามารถพิพม์ "สายรถทั้งหมด" เพื่อดูสายรถทั้งหมดในมหาวิทยาลัยธรรมศาสตร์'+
-                    '\nIf you want all of the bus lines information, please type "All bus lines".'}];
+                     +'Hello! Thank you for messaging us. You can type bus line to see the schedules of that line.'}];
     }
   }
   // create a echoing text message
@@ -89,9 +87,9 @@ function handleEvent(event) {
       // use reply API
     }
     else if(event.message.text == 'สายรถทั้งหมด' ||
-            event.message.text == 'สายรถ' ||
-            event.message.text == 'All bus lines' ||
-            event.message.text == 'All lines'){
+    event.message.text == 'สายรถ' ||
+    event.message.text == 'All bus lines' ||
+    event.message.text == 'All lines'){
       echo = [{type:'text', text:'เสน้ทางการเดินรถทั้งหมด\n\n'},{type: 'text', text: 'สาย 1A'+big_blank+time}, {type : 'text', text : 'สถานี EV (ศูนย์ประชุม) — '
       +'โรงอาหาร SC — โรงอาหาร Green — หอพักโซน A-B-C — อาคารสังคมศาสตร์/ศูนย์กีฬา — สถานี EV (เดินรถทางเดียว)'}, {type: 'text', text: 'สาย 1B'+big_blank+time}, {type : 'text', text : 'สถานี EV (ศูนย์ประชุม) — '
       +'อาคารสังคมศาสตร์/ศูนย์กีฬา — หอพักโซน C-B-A — โรงอาหาร Green — โรงอาหาร SC — สถานี EV (เดินรถทางเดียว)'}, {type: 'text', text: 'สาย 2'+big_blank+time}, {type : 'text', text : 'สถานี EV (ศูนย์ประชุม) — '
@@ -106,7 +104,6 @@ function handleEvent(event) {
   }
   return client.replyMessage(event.replyToken, echo);
 }
-
 // listen on port
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
